@@ -227,8 +227,6 @@ export default class Worker {
 }
 
 /* global self, WorkerGlobalScope */
-if (typeof WorkerGlobalScope !== 'undefined' &&
-    typeof self !== 'undefined' &&
-    self instanceof WorkerGlobalScope) {
+if (typeof self !== 'undefined' && self.XXX_IS_WORKER) {
     self.worker = new Worker(self);
 }
